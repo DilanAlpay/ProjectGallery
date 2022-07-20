@@ -41,9 +41,9 @@ public class GridGroup : MonoBehaviour
             newItem = current.Move(ctx.ReadValue<Vector2>());
         }
 
-
         if (newItem != null)
         {
+            current.SetFocus(false);
             current = newItem;
         }
 
@@ -66,5 +66,6 @@ public class GridGroup : MonoBehaviour
     private void MoveToCurrent()
     {
         cursor.transform.position = current.transform.position;
+        current.SetFocus(true);
     }
 }

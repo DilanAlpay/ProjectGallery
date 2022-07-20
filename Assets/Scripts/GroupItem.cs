@@ -8,7 +8,7 @@ public class GroupItem : MonoBehaviour
     public UnityEvent2 onFocus;
     public UnityEvent2 onLeave;
 
-    public void Focus(bool b)
+    public void SetFocus(bool b)
     {
         if (b) onFocus.Invoke();
         else onLeave.Invoke();

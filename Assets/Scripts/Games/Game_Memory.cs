@@ -130,6 +130,7 @@ public class Game_Memory : MonoBehaviour
         while (_correct.Count > 0)
         {
             SetGoal(_correct[0]);
+            goals[_correct[0]].GetComponent<ChargeObj>().Charge = 0;
             score.value += _pointsPer;
             _correct.RemoveAt(0);
         }
