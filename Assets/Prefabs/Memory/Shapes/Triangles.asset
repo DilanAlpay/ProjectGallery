@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11c505fca3f042448ecdbb5850e6398, type: 3}
+  m_Name: Triangles
+  m_EditorClassIdentifier: 
+  contents:
+  - {fileID: 11400000, guid: 0894cc5fb9d60084d9f0dbfaf0edd5e5, type: 2}
+  - {fileID: 11400000, guid: 70050e77d1a979848a8ddfe456fa72ac, type: 2}
+  - {fileID: 11400000, guid: d8c564e1477fda74a99bc1df21eb236f, type: 2}
+  - {fileID: 11400000, guid: 8abd1aae93222d1498536ca9b7120a0c, type: 2}
+  - {fileID: 11400000, guid: a4d64f10cec1f194198159ef84f6c662, type: 2}
+  - {fileID: 11400000, guid: 1f758b958624dbb40843a23a1ef0d029, type: 2}
+  - {fileID: 11400000, guid: cd203ff2590f1ca4181576a6323a6897, type: 2}
+  - {fileID: 11400000, guid: 44bf5b43ee2fad947aa9445b4b35d80a, type: 2}
+  - {fileID: 11400000, guid: ce6515ede4b54d44cbb659135bfe32c3, type: 2}
