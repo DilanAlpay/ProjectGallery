@@ -33,7 +33,7 @@ public class InputManager : MonoBehaviour
 
     public void SetPause(bool b)
     {
-        if (b)
+        if (!b)
         {
             _controls.General.Enable();
         }

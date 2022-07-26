@@ -18,6 +18,7 @@ public class ChargeObj : MonoBehaviour
     public float Rate => _rate;
 
     public Animator _animator;
+    public UnityEvent2Float onUpdate;
     public UnityEvent onFull, onEmpty;
 
     private void Awake()
@@ -30,5 +31,6 @@ public class ChargeObj : MonoBehaviour
     {
         _charge += (_rate / 100f)* Time.deltaTime;
         _animator?.SetFloat(_hashCharge, _charge);
+        onUpdate.Invoke(_charge);
     }
 }

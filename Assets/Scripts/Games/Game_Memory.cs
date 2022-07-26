@@ -13,6 +13,7 @@ public class Game_Memory : MonoBehaviour
     
     public UnityEvent2 onShowPhase;
     public UnityEvent2 onChoosePhase;
+    public UnityEvent2 onCheck;
     public UnityEvent2 onCorrect;
     public UnityEvent2 onWrong;
 
@@ -43,7 +44,7 @@ public class Game_Memory : MonoBehaviour
 
     public void DisableControls()
     {
-        switchButton.Action.performed += SwitchPhase;
+        switchButton.Action.performed -= SwitchPhase;
     }
 
     public void SetGoal(int i)
@@ -99,8 +100,12 @@ public class Game_Memory : MonoBehaviour
     }
     public void Check()
     {
-        DisableControls();
-        Invoke("GetResults",0.5f); 
+        if (collected.Count>0)
+        {
+            onCheck.Invoke();
+            Invoke("GetResults", 0.5f);
+        }
+      
     }   
 
     public void GetResults()
