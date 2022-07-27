@@ -9,6 +9,7 @@ public class Game_Memory : MonoBehaviour
     public OptionObject display;
     public InputEvent switchButton;
     public List<OptionSetObject> goals;
+    public List<OptionSetObject> builds;
     public VarInt score;
     
     public UnityEvent2 onShowPhase;
@@ -18,11 +19,12 @@ public class Game_Memory : MonoBehaviour
     public UnityEvent2 onWrong;
 
     private bool showing = true;
-    private OptionSet collected = new OptionSet();
+    //private OptionSet collected = new OptionSet();
     private int current;
     private int optionsPerGoal = 2;
     private int _pointsPer = 100;
     private List<int> _correct;
+    private bool _buildStarted;
 
     // Start is called before the first frame update
     void Start()
@@ -69,11 +71,6 @@ public class Game_Memory : MonoBehaviour
         }
     }
 
-    public void GetOption(OptionObject oo)
-    {
-        collected.Add(oo.option);
-    }
-
     public void NextSection()
     {
         current = (current + 1) % options.Count;
@@ -98,50 +95,76 @@ public class Game_Memory : MonoBehaviour
             oso.objects[i].SetOption(options[current][i]);
         }
     }
+
+    public void StartBuild()
+    {
+        _buildStarted = true;
+    }
     public void Check()
     {
-        if (collected.Count>0)
-        {
-            onCheck.Invoke();
-            Invoke("GetResults", 0.5f);
-        }
-      
+        if (!_buildStarted) return;
+        
+        onCheck.Invoke();        
+        Invoke("GetResults", 0.5f);      
     }   
 
     public void GetResults()
     {
-        _correct = new List<int>();
-        for (int i = 0; i < goals.Count; i++)
+        _correct = new List<int>(3);
+
+        //Go through each of the things we built
+        foreach(OptionSetObject build in builds)
         {
-            if (goals[i].Set.Matches(collected, false))
+            if (!build.IsEmpty())
             {
-                _correct.Add(i);
+                int i = 0;
+                int c = _correct.Count;
+
+                while(i < goals.Count && c == _correct.Count)
+                {
+                    if (!_correct.Contains(i) && goals[i].Set.Matches(build.Set, false))
+                    {
+                        _correct.Add(i);
+                    }
+                    i++;
+                }
             }
         }
 
         if (_correct.Count>0)
         {
             onCorrect.Invoke();
-            
+            StartCoroutine(AnimateSuccess());
         }
         else
         {
             onWrong.Invoke();
+            foreach (OptionSetObject obj in builds)
+            {
+                obj.GetComponent<Animator>().Play("Wrong");
+            }
         }
+
+        _buildStarted = false;
     }
 
     public void Clear()
+    {
+        EnableControls();
+    }
+
+    IEnumerator AnimateSuccess()
     {
         while (_correct.Count > 0)
         {
             SetGoal(_correct[0]);
             goals[_correct[0]].GetComponent<ChargeObj>().Charge = 0;
+            builds[_correct[0]].GetComponent<Animator>().Play("Correct");
             score.value += _pointsPer;
             _correct.RemoveAt(0);
+            yield return new WaitForSeconds(0.33f);
         }
 
-        collected.Clear();
-
-        EnableControls();
+       
     }
 }

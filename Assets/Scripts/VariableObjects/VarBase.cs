@@ -5,6 +5,7 @@ using UnityEngine;
 public class VarBase<T> : Variable
 {
     public T value;
+    //public List <>
 
     public T GetValue()
     {

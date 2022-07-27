@@ -48,4 +48,15 @@ public class OptionSetObject : MonoBehaviour
             objects[i].SetOption(source[i]);
         }
     }
+
+    public bool IsEmpty()
+    {
+        foreach(OptionObject obj in objects)
+        {
+            if (obj.option != null)
+                return false;
+        }
+
+        return true;
+    }
 }

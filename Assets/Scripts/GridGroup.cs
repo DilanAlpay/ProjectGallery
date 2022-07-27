@@ -18,14 +18,17 @@ public class GridGroup : MonoBehaviour
         MoveToCurrent();
 
 
-        eventMovement.Action.started += Move;
-        if(eventSelect)
-        eventSelect.Action.started += Select;
+        if(eventMovement != null)
+            eventMovement.Action.started += Move;
+        if(eventSelect != null)
+            eventSelect.Action.started += Select;
     }
 
     private void OnDisable()
     {
+        if(eventMovement != null)
         eventMovement.Action.started -= Move;
+        if (eventSelect != null) ;
         eventSelect.Action.started -= Select;
     }
 
@@ -48,8 +51,21 @@ public class GridGroup : MonoBehaviour
         }
 
         MoveToCurrent();
-
     }
+
+    public void Move()
+    {
+        GridGroupItem newItem = current.Move(Vector2.right);
+
+        if (newItem != null)
+        {
+            current.SetFocus(false);
+            current = newItem;
+        }
+
+        MoveToCurrent();
+    }
+
 
     void Select(InputAction.CallbackContext ctx)
     {
