@@ -754,6 +754,7 @@ GameObject:
   - component: {fileID: 4593141111844337782}
   - component: {fileID: 949335519}
   - component: {fileID: 8452126625067479782}
+  - component: {fileID: 6643058734392519821}
   m_Layer: 0
   m_Name: MemoryRequest
   m_TagString: Untagged
@@ -839,6 +840,19 @@ MonoBehaviour:
   onEmpty:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6643058734392519821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4593141111844337780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce9847509300c44db16eb03824b0d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {fileID: 11400000, guid: d5c6c7692d69c9d44b49d96471a29945, type: 2}
 --- !u!1 &6647768794641072802
 GameObject:
   m_ObjectHideFlags: 0

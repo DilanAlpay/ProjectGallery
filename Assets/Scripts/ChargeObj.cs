@@ -15,7 +15,11 @@ public class ChargeObj : MonoBehaviour
         get { return _charge; }
         set { _charge = Mathf.Clamp(value, 0, 1); }
     }
-    public float Rate => _rate;
+    public float Rate
+    {
+        get { return _rate; }
+        set { _rate = value; }
+    }
 
     public Animator _animator;
     public UnityEvent2Float onUpdate;

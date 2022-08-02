@@ -10,9 +10,14 @@ public class Accelerator : MonoBehaviour
     public int maxTally;
     public AnimationCurve curve;
 
-    
+    private void Awake()
+    {
+        OnUpdate();
+    }
     public void OnUpdate()
     {
-        speedObj.value = min + (curve.Evaluate(tallyObj.value / ((float)maxTally)) * max);
+        float percent = tallyObj.value / (float)maxTally;
+        float val = Mathf.Lerp(min, max, (curve.Evaluate(percent)));
+        speedObj.value = val;
     }
 }
