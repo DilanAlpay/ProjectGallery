@@ -26,9 +26,9 @@ public class GridGroup : MonoBehaviour
 
     private void OnDisable()
     {
-        if(eventMovement != null)
+        if(eventMovement != null && eventMovement.IsSet)
         eventMovement.Action.started -= Move;
-        if (eventSelect != null) ;
+        if (eventSelect != null && eventSelect.IsSet)
         eventSelect.Action.started -= Select;
     }
 

@@ -11,7 +11,7 @@ public class InputEvent : ScriptableObject
 
     public InputAction Action { get { return _action; } }
     public GameControls Controls { get { return _controls; } set { _controls = value; } }
-
+    public bool IsSet {  get { return _action != null; } }
     /// <summary>
     /// Generates the InputAction associated with this object using its file name
     /// </summary>

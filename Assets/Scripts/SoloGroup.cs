@@ -32,9 +32,9 @@ public class SoloGroup : MonoBehaviour
 
     private void OnDisable()
     {
-        if (inputSelect != null) inputSelect.Action.started -= Select;
-        inputPrev.Action.started -= GoPrevious;
-        inputNext.Action.started -= GoNext;
+        if (inputSelect != null && inputSelect.IsSet) inputSelect.Action.started -= Select;
+        if (inputPrev != null && inputPrev.IsSet) inputPrev.Action.started -= GoPrevious;
+        if (inputNext != null && inputNext.IsSet) inputNext.Action.started -= GoNext;
     }
 
     public void Select(InputAction.CallbackContext ctx)

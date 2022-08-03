@@ -52,7 +52,6 @@ public class TallyEvent : MonoBehaviour
         else
         {
             onNotMet.Invoke();
-            print("NOT MET");
         }
     }
 }

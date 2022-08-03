@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Match.unity
+    guid: ae79feeeb0b5c0f42a4fd3a042cf772c
   m_configObjects: {}

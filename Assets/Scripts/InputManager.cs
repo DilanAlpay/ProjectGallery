@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     {
         _controls = new GameControls();
         _controls.General.Enable();
+        _controls.Pause.Enable();
         foreach (InputEvent inputEvent in events)
         {
             inputEvent.Controls = _controls;

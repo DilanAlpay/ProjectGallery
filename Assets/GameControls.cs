@@ -98,6 +98,15 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Start"",
+                    ""type"": ""Button"",
+                    ""id"": ""3d2effaf-a43f-45a0-8874-9741e7cdf968"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -287,6 +296,284 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""action"": ""ShoulderRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fbb3bafc-8dfe-4b71-888a-c8c95882ce0b"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Pause"",
+            ""id"": ""45839283-ac48-4dd7-95f5-354c23bb6205"",
+            ""actions"": [
+                {
+                    ""name"": ""PauseSouth"",
+                    ""type"": ""Button"",
+                    ""id"": ""23544a5a-db66-48f6-8635-ea43423016c6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PauseEast"",
+                    ""type"": ""Button"",
+                    ""id"": ""5b094238-0b22-437c-b638-11ecb0276406"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PauseWest"",
+                    ""type"": ""Button"",
+                    ""id"": ""2d9bc5b2-dc24-4e3a-a291-976a3cc89a30"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PauseNorth"",
+                    ""type"": ""Button"",
+                    ""id"": ""67210241-b789-413e-ab4f-c43d0c5752c6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShoulderLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""7f9bcf60-160c-4bb7-8287-45e1ce855a56"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShoulderRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""6b8d248b-7b9a-4747-bf1e-db0250912b1c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""35ea441f-f0a7-4831-89c8-22986daefbc6"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": ""NormalizeVector2"",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Left"",
+                    ""type"": ""Button"",
+                    ""id"": ""4f69d30b-9dcd-4166-83b0-bad553ac351a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2ddb5482-be75-4a29-89af-a201e49086d9"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""PauseSouth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5284329e-9422-4277-b35d-35f0271f90e0"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PauseSouth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""43dbbdbc-e2f3-4168-a873-68b822d1f46a"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""PauseEast"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""06273d41-166f-4a3f-9210-c0d1f1d99319"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""PauseWest"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e93f22bc-beee-4d4d-8fe3-357d88fdcd7f"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""PauseNorth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6118898e-eae3-4435-a8dd-e644a6a4b7b8"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""ShoulderLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0fa93e5a-312c-47be-a91f-d1abb95524a7"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""ShoulderRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3f7c8172-fe22-4e38-9db7-b21e22fcca36"",
+                    ""path"": ""<Gamepad>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""08103d96-99ee-40ce-ae5f-212ad7e45755"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""cb356a57-7d73-4fcf-bcb3-ec881b82e5d9"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""7dda7ff0-b293-48ce-9552-c0db8fc97696"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""9c2ee5c8-597a-4910-a85e-fc1d5f974caf"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""08506f08-c6fc-4d50-9280-5ae7f6dc7452"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e3566743-82ba-41c2-a133-3b475ea6e7be"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""90c8b4a7-ec57-478d-86db-1bd36da85085"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f7137c99-f7c2-4480-9096-2208de8f41b0"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShoulderLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""838399e8-64fd-43df-bcaa-1b4cc351e605"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShoulderRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -315,6 +602,17 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         m_General_ShoulderRight = m_General.FindAction("ShoulderRight", throwIfNotFound: true);
         m_General_Movement = m_General.FindAction("Movement", throwIfNotFound: true);
         m_General_Left = m_General.FindAction("Left", throwIfNotFound: true);
+        m_General_Start = m_General.FindAction("Start", throwIfNotFound: true);
+        // Pause
+        m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
+        m_Pause_PauseSouth = m_Pause.FindAction("PauseSouth", throwIfNotFound: true);
+        m_Pause_PauseEast = m_Pause.FindAction("PauseEast", throwIfNotFound: true);
+        m_Pause_PauseWest = m_Pause.FindAction("PauseWest", throwIfNotFound: true);
+        m_Pause_PauseNorth = m_Pause.FindAction("PauseNorth", throwIfNotFound: true);
+        m_Pause_ShoulderLeft = m_Pause.FindAction("ShoulderLeft", throwIfNotFound: true);
+        m_Pause_ShoulderRight = m_Pause.FindAction("ShoulderRight", throwIfNotFound: true);
+        m_Pause_Movement = m_Pause.FindAction("Movement", throwIfNotFound: true);
+        m_Pause_Left = m_Pause.FindAction("Left", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -382,6 +680,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_General_ShoulderRight;
     private readonly InputAction m_General_Movement;
     private readonly InputAction m_General_Left;
+    private readonly InputAction m_General_Start;
     public struct GeneralActions
     {
         private @GameControls m_Wrapper;
@@ -394,6 +693,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         public InputAction @ShoulderRight => m_Wrapper.m_General_ShoulderRight;
         public InputAction @Movement => m_Wrapper.m_General_Movement;
         public InputAction @Left => m_Wrapper.m_General_Left;
+        public InputAction @Start => m_Wrapper.m_General_Start;
         public InputActionMap Get() { return m_Wrapper.m_General; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -427,6 +727,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @Left.started -= m_Wrapper.m_GeneralActionsCallbackInterface.OnLeft;
                 @Left.performed -= m_Wrapper.m_GeneralActionsCallbackInterface.OnLeft;
                 @Left.canceled -= m_Wrapper.m_GeneralActionsCallbackInterface.OnLeft;
+                @Start.started -= m_Wrapper.m_GeneralActionsCallbackInterface.OnStart;
+                @Start.performed -= m_Wrapper.m_GeneralActionsCallbackInterface.OnStart;
+                @Start.canceled -= m_Wrapper.m_GeneralActionsCallbackInterface.OnStart;
             }
             m_Wrapper.m_GeneralActionsCallbackInterface = instance;
             if (instance != null)
@@ -455,10 +758,102 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @Left.started += instance.OnLeft;
                 @Left.performed += instance.OnLeft;
                 @Left.canceled += instance.OnLeft;
+                @Start.started += instance.OnStart;
+                @Start.performed += instance.OnStart;
+                @Start.canceled += instance.OnStart;
             }
         }
     }
     public GeneralActions @General => new GeneralActions(this);
+
+    // Pause
+    private readonly InputActionMap m_Pause;
+    private IPauseActions m_PauseActionsCallbackInterface;
+    private readonly InputAction m_Pause_PauseSouth;
+    private readonly InputAction m_Pause_PauseEast;
+    private readonly InputAction m_Pause_PauseWest;
+    private readonly InputAction m_Pause_PauseNorth;
+    private readonly InputAction m_Pause_ShoulderLeft;
+    private readonly InputAction m_Pause_ShoulderRight;
+    private readonly InputAction m_Pause_Movement;
+    private readonly InputAction m_Pause_Left;
+    public struct PauseActions
+    {
+        private @GameControls m_Wrapper;
+        public PauseActions(@GameControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PauseSouth => m_Wrapper.m_Pause_PauseSouth;
+        public InputAction @PauseEast => m_Wrapper.m_Pause_PauseEast;
+        public InputAction @PauseWest => m_Wrapper.m_Pause_PauseWest;
+        public InputAction @PauseNorth => m_Wrapper.m_Pause_PauseNorth;
+        public InputAction @ShoulderLeft => m_Wrapper.m_Pause_ShoulderLeft;
+        public InputAction @ShoulderRight => m_Wrapper.m_Pause_ShoulderRight;
+        public InputAction @Movement => m_Wrapper.m_Pause_Movement;
+        public InputAction @Left => m_Wrapper.m_Pause_Left;
+        public InputActionMap Get() { return m_Wrapper.m_Pause; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PauseActions set) { return set.Get(); }
+        public void SetCallbacks(IPauseActions instance)
+        {
+            if (m_Wrapper.m_PauseActionsCallbackInterface != null)
+            {
+                @PauseSouth.started -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseSouth;
+                @PauseSouth.performed -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseSouth;
+                @PauseSouth.canceled -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseSouth;
+                @PauseEast.started -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseEast;
+                @PauseEast.performed -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseEast;
+                @PauseEast.canceled -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseEast;
+                @PauseWest.started -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseWest;
+                @PauseWest.performed -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseWest;
+                @PauseWest.canceled -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseWest;
+                @PauseNorth.started -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseNorth;
+                @PauseNorth.performed -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseNorth;
+                @PauseNorth.canceled -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseNorth;
+                @ShoulderLeft.started -= m_Wrapper.m_PauseActionsCallbackInterface.OnShoulderLeft;
+                @ShoulderLeft.performed -= m_Wrapper.m_PauseActionsCallbackInterface.OnShoulderLeft;
+                @ShoulderLeft.canceled -= m_Wrapper.m_PauseActionsCallbackInterface.OnShoulderLeft;
+                @ShoulderRight.started -= m_Wrapper.m_PauseActionsCallbackInterface.OnShoulderRight;
+                @ShoulderRight.performed -= m_Wrapper.m_PauseActionsCallbackInterface.OnShoulderRight;
+                @ShoulderRight.canceled -= m_Wrapper.m_PauseActionsCallbackInterface.OnShoulderRight;
+                @Movement.started -= m_Wrapper.m_PauseActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_PauseActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_PauseActionsCallbackInterface.OnMovement;
+                @Left.started -= m_Wrapper.m_PauseActionsCallbackInterface.OnLeft;
+                @Left.performed -= m_Wrapper.m_PauseActionsCallbackInterface.OnLeft;
+                @Left.canceled -= m_Wrapper.m_PauseActionsCallbackInterface.OnLeft;
+            }
+            m_Wrapper.m_PauseActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @PauseSouth.started += instance.OnPauseSouth;
+                @PauseSouth.performed += instance.OnPauseSouth;
+                @PauseSouth.canceled += instance.OnPauseSouth;
+                @PauseEast.started += instance.OnPauseEast;
+                @PauseEast.performed += instance.OnPauseEast;
+                @PauseEast.canceled += instance.OnPauseEast;
+                @PauseWest.started += instance.OnPauseWest;
+                @PauseWest.performed += instance.OnPauseWest;
+                @PauseWest.canceled += instance.OnPauseWest;
+                @PauseNorth.started += instance.OnPauseNorth;
+                @PauseNorth.performed += instance.OnPauseNorth;
+                @PauseNorth.canceled += instance.OnPauseNorth;
+                @ShoulderLeft.started += instance.OnShoulderLeft;
+                @ShoulderLeft.performed += instance.OnShoulderLeft;
+                @ShoulderLeft.canceled += instance.OnShoulderLeft;
+                @ShoulderRight.started += instance.OnShoulderRight;
+                @ShoulderRight.performed += instance.OnShoulderRight;
+                @ShoulderRight.canceled += instance.OnShoulderRight;
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Left.started += instance.OnLeft;
+                @Left.performed += instance.OnLeft;
+                @Left.canceled += instance.OnLeft;
+            }
+        }
+    }
+    public PauseActions @Pause => new PauseActions(this);
     private int m_ControllerSchemeIndex = -1;
     public InputControlScheme ControllerScheme
     {
@@ -474,6 +869,18 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         void OnButtonEast(InputAction.CallbackContext context);
         void OnButtonWest(InputAction.CallbackContext context);
         void OnButtonNorth(InputAction.CallbackContext context);
+        void OnShoulderLeft(InputAction.CallbackContext context);
+        void OnShoulderRight(InputAction.CallbackContext context);
+        void OnMovement(InputAction.CallbackContext context);
+        void OnLeft(InputAction.CallbackContext context);
+        void OnStart(InputAction.CallbackContext context);
+    }
+    public interface IPauseActions
+    {
+        void OnPauseSouth(InputAction.CallbackContext context);
+        void OnPauseEast(InputAction.CallbackContext context);
+        void OnPauseWest(InputAction.CallbackContext context);
+        void OnPauseNorth(InputAction.CallbackContext context);
         void OnShoulderLeft(InputAction.CallbackContext context);
         void OnShoulderRight(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
