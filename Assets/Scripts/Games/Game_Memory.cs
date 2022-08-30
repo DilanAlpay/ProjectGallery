@@ -11,7 +11,8 @@ public class Game_Memory : MonoBehaviour
     public List<OptionSetObject> goals;
     public List<OptionSetObject> builds;
     public VarInt score;
-    
+    public List<ChargeDisplay> chargeDisplays;
+
     public UnityEvent2 onShowPhase;
     public UnityEvent2 onChoosePhase;
     public UnityEvent2 onCheck;
@@ -23,9 +24,9 @@ public class Game_Memory : MonoBehaviour
     private int current;
     private int optionsPerGoal = 2;
     private int _pointsPer = 100;
-    private List<int> _correct;
+    private List<OptionSetObject> _correct;
     private bool _buildStarted;
-
+    private Vector2[] positions;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,9 +35,18 @@ public class Game_Memory : MonoBehaviour
         score.value = 0;
 
         EnableControls();
-        SetGoal(0);
-        SetGoal(1);
-        SetGoal(2);
+
+        positions = new Vector2[goals.Count];
+        int i = 0;
+
+        foreach (OptionSetObject goal in goals)
+        {
+            SetGoal(goal);
+            positions[i] = goal.transform.position;
+            i++;
+        }
+
+        SetPositions();
     }
 
     public void EnableControls()
@@ -49,12 +59,12 @@ public class Game_Memory : MonoBehaviour
         switchButton.Action.performed -= SwitchPhase;
     }
 
-    public void SetGoal(int i)
+    public void SetGoal(OptionSetObject goal)
     {
-        goals[i].Clear();
+        goal.Clear();
         for (int x = 0; x < optionsPerGoal; x++)
         {
-            goals[i].SetOption(options[x].GetRandom(), x);
+            goal.SetOption(options[x].GetRandom(), x);
         }             
     }
 
@@ -100,6 +110,7 @@ public class Game_Memory : MonoBehaviour
     {
         _buildStarted = true;
     }
+    
     public void Check()
     {
         if (!_buildStarted) return;
@@ -108,23 +119,28 @@ public class Game_Memory : MonoBehaviour
         Invoke("GetResults", 0.5f);      
     }   
 
+    //Determine if the player has submitted a correct object
     public void GetResults()
     {
-        _correct = new List<int>(3);
+        _correct = new List<OptionSetObject>();
 
         //Go through each of the things we built
         foreach(OptionSetObject build in builds)
         {
             if (!build.IsEmpty())
             {
-                int i = 0;
+                //We use this so we know if we found a mmatching goal
                 int c = _correct.Count;
 
-                while(i < goals.Count && c == _correct.Count)
+                //Go through each goal
+                int i = 0;
+                while (i < goals.Count && c == _correct.Count)
                 {
-                    if (!_correct.Contains(i) && goals[i].Set.Matches(build.Set, false))
+                    OptionSetObject g = goals[i];
+                    //If this matches and we haven't already matched this goal to a different build
+                    if (!_correct.Contains(g) && g.Set.Matches(build.Set, false))
                     {
-                        _correct.Add(i);
+                        _correct.Add(g);
                     }
                     i++;
                 }
@@ -133,19 +149,29 @@ public class Game_Memory : MonoBehaviour
 
         if (_correct.Count>0)
         {
-            onCorrect.Invoke();
-            StartCoroutine(AnimateSuccess());
+            Correct();
         }
         else
         {
-            onWrong.Invoke();
-            foreach (OptionSetObject obj in builds)
-            {
-                obj.GetComponent<Animator>().Play("Wrong");
-            }
+            Wrong();
         }
 
         _buildStarted = false;
+    }
+
+    public void Correct()
+    {
+        onCorrect.Invoke();
+        StartCoroutine(AnimateSuccess());
+    }
+
+    public void Wrong()
+    {
+        onWrong.Invoke();
+        foreach (OptionSetObject obj in builds)
+        {
+            obj.GetComponent<Animator>().Play("Wrong");
+        }
     }
 
     public void Clear()
@@ -155,16 +181,49 @@ public class Game_Memory : MonoBehaviour
 
     IEnumerator AnimateSuccess()
     {
+        //For each correctly built object...
         while (_correct.Count > 0)
         {
-            SetGoal(_correct[0]);
-            goals[_correct[0]].GetComponent<ChargeObj>().Charge = 0;
-            builds[_correct[0]].GetComponent<Animator>().Play("Correct");
+            OptionSetObject g = _correct[0];            
+            //Come up with a new goal
+            SetGoal(g);
+            //Reset the goal's timer
+            g.GetComponent<ChargeObj>().Charge = 0;
+            //Animate what we built going away
+            builds[0].GetComponent<Animator>().Play("Correct");
+            //Shift the goals to the left
+
+            Vector2 temp = goals[goals.Count - 1].transform.position;
+
+            int goalNum = 0;
+            //Find out where our goal is in the list
+            while (goals[goalNum] != g)
+            {
+                goalNum++;
+            }
+            for (int i = goalNum; i < goals.Count-1; i++)
+            {
+                goals[i] = goals[i + 1];
+            }
+            g.transform.position = temp;
+            goals[goals.Count - 1] = g;
+
+            SetPositions();
+
+            //Add points
             score.value += _pointsPer;
+            //Move on to the next correct build
             _correct.RemoveAt(0);
             yield return new WaitForSeconds(0.33f);
-        }
+        }       
+    }
 
-       
+    public void SetPositions()
+    {
+        for (int x = 0; x < goals.Count; x++)
+        {
+            goals[x].transform.position = positions[x];
+            chargeDisplays[x].chargeObj = goals[x].GetComponent<ChargeObj>();
+        }
     }
 }
