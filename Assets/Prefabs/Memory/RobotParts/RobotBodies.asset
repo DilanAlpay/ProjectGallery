@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11c505fca3f042448ecdbb5850e6398, type: 3}
+  m_Name: RobotBodies
+  m_EditorClassIdentifier: 
+  contents:
+  - {fileID: 11400000, guid: b3433b6e4aabd0243937c719ded2abf9, type: 2}
+  - {fileID: 11400000, guid: 8e1fa9c902e43014abaa92a0a8701214, type: 2}
+  - {fileID: 11400000, guid: e699ed17d813ee748b17cce981aede94, type: 2}
+  - {fileID: 11400000, guid: 1dea0911d8720a0498d60f03f63b4eb1, type: 2}
+  - {fileID: 11400000, guid: 9868de8e0fc95464eac29969c484ffa0, type: 2}
+  - {fileID: 11400000, guid: f21d0d21732c0504aa5418f41a633438, type: 2}
+  - {fileID: 11400000, guid: 60a27814ec8d25b47ba7e0468fb42286, type: 2}
+  - {fileID: 11400000, guid: e510407aee7700c4993fcec5eea6d1e0, type: 2}
+  - {fileID: 11400000, guid: 578decb33f9459b4e98e49a19263594f, type: 2}
